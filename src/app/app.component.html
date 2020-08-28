@@ -1,0 +1,26 @@
+<div style="text-align: center;">
+<button (click)="start()" *ngIf="gametatus==0" style="background-color: #4CAF50;">start</button>
+<button (click)="start()" style="background-color: #008CBA;" *ngIf="gametatus==1"> restart</button>
+<br>
+<div *ngIf="gametatus==1 || gametatus==3">
+  Score: {{score}}
+</div>
+
+<span *ngIf="gametatus==3">!!!!!!!!!!!!!!YOU LOSE!!!!!!!!!!!!!!!!</span>
+<table>
+  <tbody>
+    <tr *ngFor="let row of array"                  >
+      <td *ngFor="let cell of row">
+        
+        <div style="min-width: 50px;min-height: 50px;border:solid 2px black;text-align: center;">
+          <div *ngIf="cell !=0"  style="margin-top:18px;">
+            {{cell}}
+          </div>
+        </div>
+       
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
